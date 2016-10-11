@@ -53,8 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void search (String dinner, String movie, String location){
-       private void search (String dinner, String movie, String location){
+    private void search (){
         TextView dinner = (TextView) findViewById(R.id.dinnerText);
         TextView movie = (TextView) findViewById(R.id.movieText);
         TextView location = (TextView) findViewById(R.id.locationText);
