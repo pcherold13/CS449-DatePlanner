@@ -58,49 +58,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
+    }
+    
+   
+    public void onClick(View v){
+        switch(v.getID()){
+            case R.id.button:
+                    String place;
+                    TextView dinner = (TextView) findViewById(R.id.dinnerText);
+                    TextView movie = (TextView) findViewById(R.id.movieText);
+                    Boolean gps = ((CheckBox) findViewById(R.id.currentPos)).isChecked();
+                    Search.start(dinner, movie, gps);
+            default:
+                //do nothing
     }
 
-    private void search (){
-        String place;
-        TextView dinner = (TextView) findViewById(R.id.dinnerText);
-        TextView movie = (TextView) findViewById(R.id.movieText);
-        if(gps){
-            place = locate();                        
-        }
-        else{
-            TextView location = (TextView) findViewById(R.id.locationText);
-            place = location.getText();
-        }
-        search += dinner.getText() + " and " + movie.getText() + " showing near " + place;
-    }
-}
+    
 
-    //@TargetApi(23)
-    private String locate() {
-        String place = "";
-         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-            try {
-            // Example of how to query GPS location.
-            LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-            Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-// Returns null if location isn't available
-// In emulator, you need to send your location (via android / tools)
-//   before getLostKnownLocation() will return a location.
-            if (location != null) {
-                place = location.getLongitude() + " " + location.getLatitude();
-            }
-            else {
-                Log.i(TAG, "location was null");
-                Toast.makeText(getApplicationContext(),
-                        "Location not available", Toast.LENGTH_LONG).show();
-            }
-        }
-        catch(SecurityException e) {
-            Log.i(TAG, "Problem getting location: " + e);
-        }
-        return place;
-    }
-
+    
+       
