@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     TextView dinner = (TextView) findViewById(R.id.dinnerText);
                     TextView movie = (TextView) findViewById(R.id.movieText);
                     Boolean gps = ((CheckBox) findViewById(R.id.currentPos)).isChecked();
-                    Search.start(dinner, movie, gps);
+                    new Search.start(dinner, movie, gps);
             default:
                 //do nothing
     }
