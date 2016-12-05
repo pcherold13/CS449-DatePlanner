@@ -52,8 +52,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    String search = "";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
