@@ -18,6 +18,6 @@ public class GPSTest {
     @Test
     public void gps_null() throws Exception{
         String test = null;
-        assertNull(gps(test));
+        assertNull(GPS.locate(test));
     }
 }
